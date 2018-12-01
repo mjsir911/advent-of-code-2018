@@ -1,8 +1,6 @@
 (define (reduce f l #!optional (v 0))
-	(f (car l)
-		(if (eq? (length l) 1)
-			v
-			(reduce f (cdr l) v))))
+	(if (null? l) v
+		(f (car l) (reduce f (cdr l) v))))
 
 (define (sum l)
 	(reduce + l))
