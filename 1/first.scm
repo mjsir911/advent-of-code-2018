@@ -1,11 +1,8 @@
-(define (sublist l start stop)
-	(vector->list (subvector (list->vector l) start stop)))
-
 (define (reduce f l #!optional (v 0))
-	(f (list-ref l (- (length l) 1))
+	(f (car l)
 		(if (eq? (length l) 1)
 			v
-			(reduce f (sublist l 0 (- (length l) 1)) v))))
+			(reduce f (cdr l) v))))
 
 (define (sum l)
 	(reduce + l))
