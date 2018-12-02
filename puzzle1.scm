@@ -42,7 +42,7 @@
 			(let ()
 				(part2 l (set-adds! acc new) (car (reverse new)))))))
 
-(call-with-input-file "input" (lambda (file)
+(call-with-input-file "inputs/day1.txt" (lambda (file)
 	(let ((l (map string->number (read-all file read-line))))
 		(println (part1 l))
 		(println (part2 l)))))
