@@ -42,7 +42,7 @@
 			(let ()
 				(part2 l (set-adds! acc new) (car (reverse new)))))))
 
-(define l (map string->number (call-with-input-file "input" (lambda (p) (read-all p read-line)))))
-
-(println (part1 l))
-(println (part2 l))
+(call-with-input-file "input" (lambda (file)
+	(let ((l (map string->number (read-all file read-line))))
+		(println (part1 l))
+		(println (part2 l)))))
