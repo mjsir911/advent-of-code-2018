@@ -1,3 +1,5 @@
+#!/usr/bin/env scheme-r5rs
+
 (define (reduce f l #!optional (v 0))
 	(define (normalize-list l?)
 		(if (list? l?)
